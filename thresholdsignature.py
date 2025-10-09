@@ -12,12 +12,22 @@ class ThresholdSignature:
     """Main class for ThresholdSignature functionality."""
     
     def __init__(self, verbose: bool = False):
-        """Initialize with verbosity setting."""
+        """
+        Initialize with verbosity setting.
+        
+        Args:
+        verbose (bool): Enable verbose logging. Defaults to False.
+        """
         self.verbose = verbose
         self.logger = self._setup_logging()
         
     def _setup_logging(self) -> logging.Logger:
-        """Configure logging based on verbosity."""
+        """
+        Configure logging based on verbosity.
+        
+        Returns:
+        logging.Logger: The configured logger.
+        """
         logger = logging.getLogger(__name__)
         level = logging.DEBUG if self.verbose else logging.INFO
         logger.setLevel(level)
@@ -29,7 +39,12 @@ class ThresholdSignature:
         return logger
         
     def run(self) -> bool:
-        """Main execution method."""
+        """
+        Main execution method.
+        
+        Returns:
+        bool: True if processing completes successfully, False otherwise.
+        """
         try:
             self.logger.info("Starting ThresholdSignature processing")
             # Add your main logic here
